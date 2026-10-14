@@ -291,10 +291,9 @@ def gen(data):
     a.i('ldr', 1, 7, F_PREVK)
     a.lit(2, DIRMASK)
     a.i('ands', 1, 2)
-    a.i('ldr', 0, 7, F_PRESSED)
-    a.i('orrs', 0, 1)
-    a.i('str', 0, 7, F_PRESSED)
+    a.i('orrs', 0, 1)                       # pressed |= directionnelles maintenues
     a.label('rk_norep')
+    a.i('str', 0, 7, F_PRESSED)             # <- le stock manquant
     a.pop([4, 5, 15])
     a.pool_here()
 
@@ -377,11 +376,12 @@ def gen(data):
 
     a.label('move_delta')
     a.push([4, 14])
+    a.i('movhi', 4, 0)                       # r4 = delta (sauvegarde)
     a.i('ldr', 0, 7, F_MCOUNT)
     a.i('cmpi', 0, 0)
     a.bc('eq', 'md_done')
     a.i('ldr', 1, 7, F_CURSOR)
-    a.i('adds', 1, 1, 0)                     # r1 = curseur + delta
+    a.i('adds', 1, 1, 4)                     # r1 = curseur + delta
     a.i('cmpi', 1, 0)
     a.bc('ge', 'md_1')
     a.i('ldr', 0, 7, F_MCOUNT)
@@ -406,8 +406,6 @@ def gen(data):
     a.i('cmpi', 0, 0)
     a.bc('eq', 'dc_out')
     a.i('ldr', 0, 7, F_CURSOR)
-    a.i('ldr', 1, 7, F_TOP)
-    a.i('adds', 0, 0, 1)
     a.i('ldr', 1, 7, F_MCOUNT)
     a.i('cmp', 0, 1)
     a.bc('ge', 'dc_out')
@@ -641,9 +639,6 @@ def gen(data):
     # ============================================================== entrees
     a.label('handle_input')
     a.push([4, 5, 6, 14])
-    a.i('ldr', 1, 7, F_FRAMES)
-    a.i('addsi', 1, 1)
-    a.i('str', 1, 7, F_FRAMES)
     a.i('ldr', 0, 7, F_PRESSED)
     a.i('ldr', 1, 7, F_FOCUS)
     a.i('cmpi', 1, 0)
@@ -759,6 +754,8 @@ def gen(data):
     # liste
     a.i('movs', 4, 0)
     a.label('rd_list')
+    a.i('cmpi', 4, LIST_N)
+    a.bc('ge', 'rd_listdone')
     a.i('ldr', 0, 7, F_TOP)
     a.i('adds', 0, 0, 4)
     a.i('ldr', 1, 7, F_MCOUNT)

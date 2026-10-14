@@ -110,7 +110,8 @@ class Emu:
                     self._shift_flags(val, imm5, r[rm])
                     r[rd] = val
                 else:                                 # adds/subs registre
-                    rn = (ins >> 6) & 7
+                    rn = (ins >> 3) & 7                  # bits 5-3 = Rn
+                    rm = (ins >> 6) & 7                  # bits 8-6 = Rm
                     if ins & 0x0200:
                         r[rd] = self._sub(r[rn], r[rm])
                     else:
@@ -196,24 +197,22 @@ class Emu:
             r[rt] = self.rd32(base + imm)
             return nxt
         if 0x9000 <= ins < 0xA000:
-            if ins & 0x0800:                             # str [sp]
-                rt = (ins >> 8) & 7
-                imm = (ins & 0xFF) * 4
-                self.wr32(r[13] + imm, r[rt])
-            else:                                        # ldr [sp]
-                rt = (ins >> 8) & 7
-                imm = (ins & 0xFF) * 4
+            rt = (ins >> 8) & 7
+            imm = (ins & 0xFF) * 4
+            if ins & 0x0800:                             # ldr rt, [sp, #imm]
                 r[rt] = self.rd32(r[13] + imm)
+            else:                                        # str rt, [sp, #imm]
+                self.wr32(r[13] + imm, r[rt])
             return nxt
 
-        # ---- add sp, #imm / add rx, sp, #imm
+        # ---- add rd, pc, #imm (0xA000) / add rd, sp, #imm (0xA800)
         if 0xA000 <= ins < 0xB000:
             rd = (ins >> 8) & 7
             imm = (ins & 0xFF) * 4
-            if ins & 0x0080:                             # add rd, sp, #imm
-                r[rd] = (r[13] + imm) & 0xFFFFFFFF
-            else:                                        # add sp, #imm
-                r[13] = (r[13] + imm) & 0xFFFFFFFF
+            if ins & 0x0800:
+                r[rd] = (r[13] + imm) & 0xFFFFFFFF       # add rd, sp, #imm
+            else:
+                r[rd] = (((pc + 4) & ~3) + imm) & 0xFFFFFFFF   # add rd, pc, #imm
             return nxt
 
         # ---- push / pop (registres en ordre croissant, adresses croissantes)
@@ -258,8 +257,8 @@ class Emu:
             i1 = (j1 ^ 1) ^ s
             i2 = (j2 ^ 1) ^ s
             off = (s << 24) | (i1 << 23) | (i2 << 22) | off
-            if off & 0x800000:
-                off -= 0x1000000
+            if off & 0x1000000:                 # bit 24 = bit de signe
+                off -= 0x2000000
             r[14] = (pc + 4) | 1
             return (pc + 4 + off * 2) & ~1
 
@@ -331,7 +330,7 @@ class Emu:
             sad = struct.unpack_from('<I', io, base)[0]
             dad = struct.unpack_from('<I', io, base + 4)[0]
             n = cnt & 0xFFFF
-            wide = (cnt >> 10) & 1
+            wide = (cnt >> 26) & 1          # bit 10 de CNT_H
             if wide:
                 for _ in range(n):
                     self.wr32(dad, self.rd32(sad)); sad += 4; dad += 4
