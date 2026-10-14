@@ -1,0 +1,24 @@
+08EB2200  push     {r4, r5, r6, lr}
+08EB2202  mov      r4, r0
+08EB2204  ldr      r0, [r4, #8]
+08EB2206  ldrh     r0, [r0]
+08EB2208  ldr      r1, [pc, #0x24]
+08EB220A  cmp      r0, r1
+08EB220C  bne      #0x8eb2220
+08EB220E  bl       #0x8eb2238
+08EB2212  cmp      r0, #0
+08EB2214  beq      #0x8eb2220
+08EB2216  mov      r5, r0
+08EB2218  ldr      r0, [pc, #0x14]
+08EB221A  bl       #0x806e478
+08EB221E  strh     r5, [r0]
+08EB2220  mov      r0, r4
+08EB2222  pop      {r4, r5, r6}
+08EB2224  add      sp, #4
+08EB2226  push     {r5, r6}
+08EB2228  sub      sp, #8
+08EB222A  adds     r4, r0, #0
+08EB222C  ldr      r0, [pc, #4]
+08EB222E  bx       r0
+08EB2230  ands     r2, r0
+08EB2232  movs     r0, r0

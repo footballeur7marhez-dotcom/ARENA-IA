@@ -1,0 +1,1003 @@
+08EB2200  push     {r4, r5, r6, lr}
+08EB2202  mov      r4, r0
+08EB2204  ldr      r0, [r4, #8]
+08EB2206  ldrh     r0, [r0]
+08EB2208  ldr      r1, [pc, #0x24]
+08EB220A  cmp      r0, r1
+08EB220C  bne      #0x8eb2220
+08EB220E  bl       #0x8eb2238
+08EB2212  cmp      r0, #0
+08EB2214  beq      #0x8eb2220
+08EB2216  mov      r5, r0
+08EB2218  ldr      r0, [pc, #0x14]
+08EB221A  bl       #0x806e478
+08EB221E  strh     r5, [r0]
+08EB2220  mov      r0, r4
+08EB2222  pop      {r4, r5, r6}
+08EB2224  add      sp, #4
+08EB2226  push     {r5, r6}
+08EB2228  sub      sp, #8
+08EB222A  adds     r4, r0, #0
+08EB222C  ldr      r0, [pc, #4]
+08EB222E  bx       r0
+08EB2230  ands     r2, r0
+08EB2232  movs     r0, r0
+08EB2236  lsrs     r6, r0, #0x20
+08EB2238  push     {r4, r5, r6, r7, lr}
+08EB223A  sub      sp, #0x1fc
+08EB223C  sub      sp, #0x1fc
+08EB223E  sub      sp, #8
+08EB2240  mov      r7, sp
+08EB2242  ldr      r0, [pc, #0x11c]
+08EB2244  ldrh     r1, [r0]
+08EB2246  strh     r1, [r7, #0x2c]
+08EB2248  ldr      r0, [pc, #0x118]
+08EB224A  ldrh     r1, [r0]
+08EB224C  strh     r1, [r7, #0x2e]
+08EB224E  ldr      r0, [pc, #0x118]
+08EB2250  ldrh     r1, [r0]
+08EB2252  strh     r1, [r7, #0x30]
+08EB2254  ldr      r0, [pc, #0x114]
+08EB2256  ldrh     r1, [r0]
+08EB2258  strh     r1, [r7, #0x32]
+08EB225A  ldr      r0, [pc, #0x114]
+08EB225C  add      r1, sp, #0x58
+08EB225E  movs     r2, #0x60
+08EB2260  ldrb     r3, [r0]
+08EB2262  strb     r3, [r1]
+08EB2264  adds     r0, #1
+08EB2266  adds     r1, #1
+08EB2268  subs     r2, #1
+08EB226A  bne      #0x8eb2260
+08EB226C  ldr      r0, [pc, #0xf4]
+08EB226E  ldr      r1, [pc, #0x104]
+08EB2270  strh     r1, [r0]
+08EB2272  ldr      r0, [pc, #0xf4]
+08EB2274  movs     r1, #0
+08EB2276  strh     r1, [r0]
+08EB2278  ldr      r0, [pc, #0xf0]
+08EB227A  strh     r1, [r0]
+08EB227C  ldr      r0, [pc, #0xe0]
+08EB227E  ldr      r1, [pc, #0xf8]
+08EB2280  strh     r1, [r0]
+08EB2282  ldr      r0, [pc, #0xf8]
+08EB2284  ldr      r1, [pc, #0xf8]
+08EB2286  ldr      r2, [pc, #0xfc]
+08EB2288  bl       #0x8eb23b0
+08EB228C  ldr      r0, [pc, #0xf8]
+08EB228E  ldr      r1, [pc, #0xe0]
+08EB2290  ldr      r2, [pc, #0xf8]
+08EB2292  bl       #0x8eb23b0
+08EB2296  ldr      r0, [pc, #0xf8]
+08EB2298  ldr      r1, [pc, #0xf8]
+08EB229A  ldr      r2, [pc, #0xfc]
+08EB229C  bl       #0x8eb23b0
+08EB22A0  ldr      r0, [pc, #0xf8]
+08EB22A2  movs     r1, #0
+08EB22A4  ldr      r2, [pc, #0xf8]
+08EB22A6  strh     r1, [r0]
+08EB22A8  adds     r0, #2
+08EB22AA  subs     r2, #1
+08EB22AC  bne      #0x8eb22a6
+08EB22AE  movs     r0, #0
+08EB22B0  str      r0, [r7]
+08EB22B2  movs     r0, #0
+08EB22B4  str      r0, [r7, #4]
+08EB22B6  movs     r0, #0
+08EB22B8  str      r0, [r7, #8]
+08EB22BA  movs     r0, #0
+08EB22BC  str      r0, [r7, #0xc]
+08EB22BE  movs     r0, #0
+08EB22C0  str      r0, [r7, #0x10]
+08EB22C2  movs     r0, #0
+08EB22C4  str      r0, [r7, #0x14]
+08EB22C6  movs     r0, #0
+08EB22C8  str      r0, [r7, #0x18]
+08EB22CA  movs     r0, #0
+08EB22CC  str      r0, [r7, #0x1c]
+08EB22CE  movs     r0, #0
+08EB22D0  str      r0, [r7, #0x20]
+08EB22D2  movs     r0, #0
+08EB22D4  str      r0, [r7, #0x38]
+08EB22D6  movs     r0, #0
+08EB22D8  str      r0, [r7, #0x3c]
+08EB22DA  movs     r0, #0
+08EB22DC  str      r0, [r7, #0x40]
+08EB22DE  movs     r0, #0
+08EB22E0  str      r0, [r7, #0x44]
+08EB22E2  movs     r0, #0
+08EB22E4  str      r0, [r7, #0x48]
+08EB22E6  movs     r0, #0
+08EB22E8  str      r0, [r7, #0x34]
+08EB22EA  movs     r0, #0
+08EB22EC  str      r0, [r7, #0x28]
+08EB22EE  ldr      r0, [pc, #0xb4]
+08EB22F0  str      r0, [r7, #0x24]
+08EB22F2  ldr      r0, [pc, #0xb4]
+08EB22F4  str      r0, [r7, #0x54]
+08EB22F6  bl       #0x8eb2404
+08EB22FA  ldr      r0, [pc, #0xb0]
+08EB22FC  str      r0, [r7, #0x34]
+08EB22FE  bl       #0x8eb23d4
+08EB2302  bl       #0x8eb23e4
+08EB2306  bl       #0x8eb2740
+08EB230A  ldr      r0, [r7, #0x48]
+08EB230C  cmp      r0, #0
+08EB230E  bne      #0x8eb2320
+08EB2310  ldr      r0, [r7, #0x34]
+08EB2312  cmp      r0, #0
+08EB2314  beq      #0x8eb22fe
+08EB2316  bl       #0x8eb2894
+08EB231A  movs     r0, #0
+08EB231C  str      r0, [r7, #0x34]
+08EB231E  b        #0x8eb22fe
+08EB2320  add      r0, sp, #0x58
+08EB2322  ldr      r1, [pc, #0x4c]
+08EB2324  movs     r2, #0x60
+08EB2326  ldrb     r3, [r0]
+08EB2328  strb     r3, [r1]
+08EB232A  adds     r0, #1
+08EB232C  adds     r1, #1
+08EB232E  subs     r2, #1
+08EB2330  bne      #0x8eb2326
+08EB2332  ldrh     r0, [r7, #0x2c]
+08EB2334  ldr      r1, [pc, #0x28]
+08EB2336  strh     r0, [r1]
+08EB2338  ldrh     r0, [r7, #0x2e]
+08EB233A  ldr      r1, [pc, #0x28]
+08EB233C  strh     r0, [r1]
+08EB233E  ldrh     r0, [r7, #0x30]
+08EB2340  ldr      r1, [pc, #0x24]
+08EB2342  strh     r0, [r1]
+08EB2344  ldrh     r0, [r7, #0x32]
+08EB2346  ldr      r1, [pc, #0x24]
+08EB2348  strh     r0, [r1]
+08EB234A  ldr      r0, [r7, #0x48]
+08EB234C  cmp      r0, #1
+08EB234E  bne      #0x8eb2354
+08EB2350  ldr      r0, [r7, #0x4c]
+08EB2352  b        #0x8eb2356
+08EB2354  movs     r0, #0
+08EB2356  add      sp, #0x1fc
+08EB2358  add      sp, #0x1fc
+08EB235A  add      sp, #8
+08EB235C  pop      {r4, r5, r6, r7, pc}
+08EB235E  movs     r0, r0
+08EB2360  movs     r0, r0
+08EB2362  lsls     r0, r0, #0x10
+08EB2364  movs     r0, r1
+08EB2366  lsls     r0, r0, #0x10
+08EB2368  movs     r0, r2
+08EB236A  lsls     r0, r0, #0x10
+08EB236C  movs     r2, r2
+08EB236E  lsls     r0, r0, #0x10
+08EB2370  movs     r0, r0
+08EB2372  lsls     r0, r0, #0x14
+08EB2374  subs     r4, r0, r4
+08EB2376  movs     r0, r0
+08EB2378  lsls     r0, r0, #4
+08EB237A  movs     r0, r0
+08EB237C  adds     r0, #0
+08EB237E  lsrs     r3, r5, #3
+08EB2380  ands     r0, r0
+08EB2382  lsls     r0, r0, #0x18
+08EB2384  lsrs     r0, r0, #7
+08EB2386  movs     r0, r0
+08EB2388  cbnz     r0, #0x8eb238c
+08EB238A  lsrs     r7, r6, #3
+08EB238C  lsls     r0, r0, #1
+08EB238E  movs     r0, r0
+08EB2390  cbnz     r0, #0x8eb23a4
+08EB2392  lsrs     r7, r6, #3
+08EB2394  lsls     r0, r4, #1
+08EB2396  lsls     r0, r0, #0x14
+08EB2398  movs     r0, r4
+08EB239A  movs     r0, r0
+08EB239C  bhi      #0x8eb23a0
+08EB239E  lsls     r0, r0, #0x18
+08EB23A0  lsls     r0, r0, #8
+08EB23A2  movs     r0, r0
+08EB23A4  lsls     r7, r7, #0xf
+08EB23A6  movs     r0, r0
+08EB23A8  ldrsb    r0, [r7, r1]
+08EB23AA  asrs     r4, r6, #8
+08EB23AC  movs     r1, r0
+08EB23AE  movs     r0, r0
+08EB23B0  push     {r4, lr}
+08EB23B2  ldr      r3, [pc, #0x14]
+08EB23B4  str      r0, [r3]
+08EB23B6  ldr      r3, [pc, #0x14]
+08EB23B8  str      r1, [r3]
+08EB23BA  lsrs     r2, r2, #1
+08EB23BC  movs     r3, #0x80
+08EB23BE  lsls     r3, r3, #0x18
+08EB23C0  orrs     r2, r3
+08EB23C2  ldr      r3, [pc, #0xc]
+08EB23C4  str      r2, [r3]
+08EB23C6  pop      {r4, pc}
+08EB23C8  lsls     r4, r2, #3
+08EB23CA  lsls     r0, r0, #0x10
+08EB23CC  lsls     r0, r3, #3
+08EB23CE  lsls     r0, r0, #0x10
+08EB23D0  lsls     r4, r3, #3
+08EB23D2  lsls     r0, r0, #0x10
+08EB23D4  push     {r4, lr}
+08EB23D6  ldr      r0, [pc, #8]
+08EB23D8  ldrh     r1, [r0]
+08EB23DA  lsrs     r1, r1, #1
+08EB23DC  blo      #0x8eb23d8
+08EB23DE  pop      {r4, pc}
+08EB23E0  movs     r4, r0
+08EB23E2  lsls     r0, r0, #0x10
+08EB23E4  push     {r4, r5, lr}
+08EB23E6  ldr      r0, [pc, #0x18]
+08EB23E8  ldrh     r0, [r0]
+08EB23EA  mvns     r0, r0
+08EB23EC  movs     r1, #0xff
+08EB23EE  lsls     r1, r1, #2
+08EB23F0  adds     r1, #3
+08EB23F2  ands     r0, r1
+08EB23F4  mov      r5, r0
+08EB23F6  ldr      r1, [r7, #0x24]
+08EB23F8  mvns     r4, r1
+08EB23FA  ands     r0, r4
+08EB23FC  str      r5, [r7, #0x24]
+08EB23FE  pop      {r4, r5, pc}
+08EB2400  lsls     r0, r6, #4
+08EB2402  lsls     r0, r0, #0x10
+08EB2404  push     {r4, r5, r6, lr}
+08EB2406  add      r4, sp, #0xc0
+08EB2408  movs     r5, #0
+08EB240A  movs     r6, #1
+08EB240C  bl       #0x8eb242c
+08EB2410  cmp      r0, #0
+08EB2412  beq      #0x8eb241a
+08EB2414  strh     r6, [r4]
+08EB2416  adds     r4, #2
+08EB2418  adds     r5, #1
+08EB241A  adds     r6, #1
+08EB241C  ldr      r0, [pc, #8]
+08EB241E  cmp      r6, r0
+08EB2420  ble      #0x8eb240c
+08EB2422  str      r5, [r7, #0x40]
+08EB2424  pop      {r4, r5, r6, pc}
+08EB2426  movs     r0, r0
+08EB2428  lsls     r2, r0, #6
+08EB242A  movs     r0, r0
+08EB242C  push     {r4, r5, r6, lr}
+08EB242E  ldr      r1, [r7, #0x1c]
+08EB2430  cmp      r1, #0
+08EB2432  beq      #0x8eb2444
+08EB2434  ldr      r1, [pc, #0x50]
+08EB2436  ldrh     r2, [r1]
+08EB2438  cmp      r2, #0
+08EB243A  beq      #0x8eb2482
+08EB243C  cmp      r2, r0
+08EB243E  beq      #0x8eb2444
+08EB2440  adds     r1, #2
+08EB2442  b        #0x8eb2436
+08EB2444  ldr      r1, [r7, #0x10]
+08EB2446  cmp      r1, #0
+08EB2448  bne      #0x8eb244e
+08EB244A  movs     r0, #1
+08EB244C  b        #0x8eb2484
+08EB244E  subs     r0, #1
+08EB2450  lsls     r0, r0, #5
+08EB2452  ldr      r1, [pc, #0x38]
+08EB2454  adds     r0, r0, r1
+08EB2456  adds     r0, #0x10
+08EB2458  mov      r3, r0
+08EB245A  ldrb     r1, [r3]
+08EB245C  cmp      r1, #0
+08EB245E  beq      #0x8eb2482
+08EB2460  movs     r4, #0
+08EB2462  mov      r5, r3
+08EB2464  mov      r6, r7
+08EB2466  ldrb     r1, [r5]
+08EB2468  ldrb     r2, [r6]
+08EB246A  cmp      r1, r2
+08EB246C  bne      #0x8eb247e
+08EB246E  adds     r5, #1
+08EB2470  adds     r6, #1
+08EB2472  adds     r4, #1
+08EB2474  ldr      r1, [r7, #0x10]
+08EB2476  cmp      r4, r1
+08EB2478  blt      #0x8eb2466
+08EB247A  movs     r0, #1
+08EB247C  b        #0x8eb2484
+08EB247E  adds     r3, #1
+08EB2480  b        #0x8eb245a
+08EB2482  movs     r0, #0
+08EB2484  pop      {r4, r5, r6, pc}
+08EB2486  movs     r0, r0
+08EB248A  lsrs     r7, r6, #3
+08EB248C  subs     r2, #0
+08EB248E  lsrs     r3, r5, #3
+08EB2490  ldr      r0, [r7, #0x14]
+08EB2492  ldr      r1, [r7, #0x18]
+08EB2494  cmp      r0, r1
+08EB2496  bge      #0x8eb249c
+08EB2498  str      r0, [r7, #0x18]
+08EB249A  bx       lr
+08EB249C  adds     r1, #6
+08EB249E  cmp      r0, r1
+08EB24A0  ble      #0x8eb24a6
+08EB24A2  subs     r0, #6
+08EB24A4  str      r0, [r7, #0x18]
+08EB24A6  bx       lr
+08EB24A8  push     {r4, lr}
+08EB24AA  ldr      r1, [r7, #0x40]
+08EB24AC  subs     r1, #1
+08EB24AE  ldr      r2, [r7, #0x14]
+08EB24B0  adds     r2, r2, r0
+08EB24B2  cmp      r2, r1
+08EB24B4  ble      #0x8eb24b8
+08EB24B6  mov      r2, r1
+08EB24B8  cmp      r2, #0
+08EB24BA  bge      #0x8eb24be
+08EB24BC  movs     r2, #0
+08EB24BE  str      r2, [r7, #0x14]
+08EB24C0  bl       #0x8eb2490
+08EB24C4  ldr      r0, [pc, #4]
+08EB24C6  str      r0, [r7, #0x34]
+08EB24C8  pop      {r4, pc}
+08EB24CA  movs     r0, r0
+08EB24CC  movs     r1, r0
+08EB24CE  movs     r0, r0
+08EB24D0  push     {r4, lr}
+08EB24D2  ldr      r0, [r7, #0x14]
+08EB24D4  ldr      r1, [r7, #0x40]
+08EB24D6  cmp      r0, r1
+08EB24D8  bge      #0x8eb24e6
+08EB24DA  add      r1, sp, #0xc0
+08EB24DC  adds     r1, r1, r0
+08EB24DE  ldrh     r4, [r1]
+08EB24E0  str      r4, [r7, #0x4c]
+08EB24E2  ldr      r0, [pc, #4]
+08EB24E4  str      r0, [r7, #0x48]
+08EB24E6  pop      {r4, pc}
+08EB24E8  movs     r1, r0
+08EB24EA  movs     r0, r0
+08EB24EC  push     {r4, r5, lr}
+08EB24EE  movs     r0, #0
+08EB24F0  str      r0, [r7, #0x1c]
+08EB24F2  movs     r0, #0
+08EB24F4  str      r0, [r7, #0x10]
+08EB24F6  movs     r0, #0
+08EB24F8  str      r0, [r7]
+08EB24FA  movs     r0, #0
+08EB24FC  str      r0, [r7, #4]
+08EB24FE  movs     r0, #0
+08EB2500  str      r0, [r7, #8]
+08EB2502  movs     r0, #0
+08EB2504  str      r0, [r7, #0xc]
+08EB2506  bl       #0x8eb2404
+08EB250A  ldr      r4, [r7, #0x54]
+08EB250C  ldr      r5, [r7, #0x28]
+08EB250E  eors     r4, r5
+08EB2510  lsls     r5, r4, #0xd
+08EB2512  eors     r4, r5
+08EB2514  lsrs     r5, r4, #0x11
+08EB2516  eors     r4, r5
+08EB2518  lsls     r5, r4, #5
+08EB251A  eors     r4, r5
+08EB251C  cmp      r4, #0
+08EB251E  bne      #0x8eb2522
+08EB2520  movs     r4, #1
+08EB2522  str      r4, [r7, #0x54]
+08EB2524  movs     r5, #0xff
+08EB2526  lsls     r5, r5, #3
+08EB2528  adds     r5, #7
+08EB252A  ands     r4, r5
+08EB252C  ldr      r5, [pc, #0x30]
+08EB252E  cmp      r4, r5
+08EB2530  blt      #0x8eb2536
+08EB2532  subs     r4, r4, r5
+08EB2534  b        #0x8eb252c
+08EB2536  adds     r4, #1
+08EB2538  add      r0, sp, #0xc0
+08EB253A  movs     r1, #0
+08EB253C  ldr      r2, [r7, #0x40]
+08EB253E  cmp      r1, r2
+08EB2540  bge      #0x8eb254e
+08EB2542  ldrh     r3, [r0]
+08EB2544  cmp      r3, r4
+08EB2546  beq      #0x8eb2550
+08EB2548  adds     r0, #2
+08EB254A  adds     r1, #1
+08EB254C  b        #0x8eb253c
+08EB254E  movs     r1, #0
+08EB2550  str      r1, [r7, #0x14]
+08EB2552  movs     r0, #0
+08EB2554  str      r0, [r7, #0x18]
+08EB2556  bl       #0x8eb2490
+08EB255A  ldr      r0, [pc, #8]
+08EB255C  str      r0, [r7, #0x34]
+08EB255E  pop      {r4, r5, pc}
+08EB2560  lsls     r2, r0, #6
+08EB2562  movs     r0, r0
+08EB2564  movs     r1, r0
+08EB2566  movs     r0, r0
+08EB2568  push     {r4, r5, lr}
+08EB256A  ldr      r4, [r7, #0x3c]
+08EB256C  lsls     r5, r4, #3
+08EB256E  subs     r5, r5, r4
+08EB2570  ldr      r4, [r7, #0x38]
+08EB2572  adds     r5, r5, r4
+08EB2574  ldr      r0, [pc, #0x48]
+08EB2576  adds     r0, r0, r5
+08EB2578  ldrb     r4, [r0]
+08EB257A  movs     r0, #0xff
+08EB257C  cmp      r4, r0
+08EB257E  bne      #0x8eb2586
+08EB2580  bl       #0x8eb25cc
+08EB2584  b        #0x8eb25be
+08EB2586  movs     r0, #0xfe
+08EB2588  cmp      r4, r0
+08EB258A  bne      #0x8eb259a
+08EB258C  movs     r0, #0
+08EB258E  str      r0, [r7, #0x10]
+08EB2590  str      r0, [r7]
+08EB2592  str      r0, [r7, #4]
+08EB2594  str      r0, [r7, #8]
+08EB2596  str      r0, [r7, #0xc]
+08EB2598  b        #0x8eb25ac
+08EB259A  ldr      r0, [r7, #0x10]
+08EB259C  ldr      r1, [pc, #0x24]
+08EB259E  cmp      r0, r1
+08EB25A0  bge      #0x8eb25be
+08EB25A2  mov      r1, r7
+08EB25A4  adds     r1, r1, r0
+08EB25A6  strb     r4, [r1]
+08EB25A8  adds     r0, #1
+08EB25AA  str      r0, [r7, #0x10]
+08EB25AC  bl       #0x8eb2404
+08EB25B0  movs     r0, #0
+08EB25B2  str      r0, [r7, #0x14]
+08EB25B4  str      r0, [r7, #0x18]
+08EB25B6  bl       #0x8eb2490
+08EB25BA  ldr      r0, [pc, #0xc]
+08EB25BC  str      r0, [r7, #0x34]
+08EB25BE  pop      {r4, r5, pc}
+08EB25C0  push     {lr}
+08EB25C2  lsrs     r7, r6, #3
+08EB25C4  movs     r4, r1
+08EB25C6  movs     r0, r0
+08EB25C8  movs     r1, r0
+08EB25CA  movs     r0, r0
+08EB25CC  push     {r4, lr}
+08EB25CE  ldr      r0, [r7, #0x10]
+08EB25D0  cmp      r0, #0
+08EB25D2  beq      #0x8eb25f2
+08EB25D4  subs     r0, #1
+08EB25D6  str      r0, [r7, #0x10]
+08EB25D8  mov      r1, r7
+08EB25DA  adds     r1, r1, r0
+08EB25DC  movs     r2, #0
+08EB25DE  strb     r2, [r1]
+08EB25E0  bl       #0x8eb2404
+08EB25E4  movs     r0, #0
+08EB25E6  str      r0, [r7, #0x14]
+08EB25E8  str      r0, [r7, #0x18]
+08EB25EA  bl       #0x8eb2490
+08EB25EE  ldr      r0, [pc, #4]
+08EB25F0  str      r0, [r7, #0x34]
+08EB25F2  pop      {r4, pc}
+08EB25F4  movs     r1, r0
+08EB25F6  movs     r0, r0
+08EB25F8  push     {r4, lr}
+08EB25FA  ldr      r0, [r7, #0x3c]
+08EB25FC  cmp      r0, #0
+08EB25FE  bne      #0x8eb2658
+08EB2600  movs     r0, #5
+08EB2602  b        #0x8eb265a
+08EB2604  subs     r0, #1
+08EB2606  str      r0, [r7, #0x3c]
+08EB2608  ldr      r0, [pc, #4]
+08EB260A  str      r0, [r7, #0x34]
+08EB260C  pop      {r4, pc}
+08EB260E  movs     r0, r0
+08EB2610  movs     r1, r0
+08EB2612  movs     r0, r0
+08EB2614  push     {r4, lr}
+08EB2616  ldr      r0, [r7, #0x3c]
+08EB2618  cmp      r0, #5
+08EB261A  bne      #0x8eb2658
+08EB261C  movs     r0, #0
+08EB261E  b        #0x8eb265a
+08EB2620  adds     r0, #1
+08EB2622  str      r0, [r7, #0x3c]
+08EB2624  ldr      r0, [pc, #4]
+08EB2626  str      r0, [r7, #0x34]
+08EB2628  pop      {r4, pc}
+08EB262A  movs     r0, r0
+08EB262C  movs     r1, r0
+08EB262E  movs     r0, r0
+08EB2630  push     {r4, lr}
+08EB2632  ldr      r0, [r7, #0x38]
+08EB2634  cmp      r0, #0
+08EB2636  bne      #0x8eb2658
+08EB2638  movs     r0, #6
+08EB263A  b        #0x8eb265a
+08EB263C  subs     r0, #1
+08EB263E  str      r0, [r7, #0x38]
+08EB2640  ldr      r0, [pc, #4]
+08EB2642  str      r0, [r7, #0x34]
+08EB2644  pop      {r4, pc}
+08EB2646  movs     r0, r0
+08EB2648  movs     r1, r0
+08EB264A  movs     r0, r0
+08EB264C  push     {r4, lr}
+08EB264E  ldr      r0, [r7, #0x38]
+08EB2650  cmp      r0, #6
+08EB2652  bne      #0x8eb2658
+08EB2654  movs     r0, #0
+08EB2656  b        #0x8eb265a
+08EB2658  adds     r0, #1
+08EB265A  str      r0, [r7, #0x38]
+08EB265C  ldr      r0, [pc, #4]
+08EB265E  str      r0, [r7, #0x34]
+08EB2660  pop      {r4, pc}
+08EB2662  movs     r0, r0
+08EB2664  movs     r1, r0
+08EB2666  movs     r0, r0
+08EB2668  push     {r4, r5, r6, lr}
+08EB266A  ldr      r4, [pc, #0x10]
+08EB266C  lsls     r5, r1, #6
+08EB266E  adds     r4, r4, r5
+08EB2670  lsls     r5, r2, #1
+08EB2672  adds     r4, r4, r5
+08EB2674  lsls     r3, r3, #0xc
+08EB2676  orrs     r0, r3
+08EB2678  strh     r0, [r4]
+08EB267A  pop      {r4, r5, r6, pc}
+08EB267C  bhi      #0x8eb2680
+08EB267E  lsls     r0, r0, #0x18
+08EB2680  push     {r4, r5, r6, lr}
+08EB2682  ldr      r4, [pc, #0x1c]
+08EB2684  lsls     r5, r1, #6
+08EB2686  adds     r4, r4, r5
+08EB2688  lsls     r5, r2, #1
+08EB268A  adds     r4, r4, r5
+08EB268C  lsls     r3, r3, #0xc
+08EB268E  ldrb     r5, [r0]
+08EB2690  cmp      r5, #0
+08EB2692  beq      #0x8eb269e
+08EB2694  orrs     r5, r3
+08EB2696  strh     r5, [r4]
+08EB2698  adds     r4, #2
+08EB269A  adds     r0, #1
+08EB269C  b        #0x8eb268e
+08EB269E  pop      {r4, r5, r6, pc}
+08EB26A0  bhi      #0x8eb26a4
+08EB26A2  lsls     r0, r0, #0x18
+08EB26A4  push     {r4, r5, r6, lr}
+08EB26A6  sub      sp, #0x10
+08EB26A8  str      r1, [sp]
+08EB26AA  str      r2, [sp, #4]
+08EB26AC  str      r3, [sp, #8]
+08EB26AE  movs     r4, #0
+08EB26B0  ldr      r5, [pc, #0x48]
+08EB26B2  cmp      r0, r5
+08EB26B4  blt      #0x8eb26bc
+08EB26B6  subs     r0, r0, r5
+08EB26B8  adds     r4, #1
+08EB26BA  b        #0x8eb26b2
+08EB26BC  movs     r5, #0
+08EB26BE  ldr      r6, [pc, #0x40]
+08EB26C0  cmp      r0, r6
+08EB26C2  blt      #0x8eb26ca
+08EB26C4  subs     r0, r0, r6
+08EB26C6  adds     r5, #1
+08EB26C8  b        #0x8eb26c0
+08EB26CA  adds     r4, #0x35
+08EB26CC  adds     r5, #0x35
+08EB26CE  adds     r0, #0x35
+08EB26D0  mov      r0, r4
+08EB26D2  ldr      r1, [sp]
+08EB26D4  ldr      r2, [sp, #4]
+08EB26D6  adds     r2, #0
+08EB26D8  ldr      r3, [sp, #8]
+08EB26DA  bl       #0x8eb2668
+08EB26DE  mov      r0, r5
+08EB26E0  ldr      r1, [sp]
+08EB26E2  ldr      r2, [sp, #4]
+08EB26E4  adds     r2, #1
+08EB26E6  ldr      r3, [sp, #8]
+08EB26E8  bl       #0x8eb2668
+08EB26EC  mov      r0, r0
+08EB26EE  ldr      r1, [sp]
+08EB26F0  ldr      r2, [sp, #4]
+08EB26F2  adds     r2, #2
+08EB26F4  ldr      r3, [sp, #8]
+08EB26F6  bl       #0x8eb2668
+08EB26FA  pop      {r4, r5, r6, pc}
+08EB26FC  lsls     r4, r4, #1
+08EB26FE  movs     r0, r0
+08EB2700  movs     r2, r1
+08EB2702  movs     r0, r0
+08EB2704  push     {r4, r5, r6, lr}
+08EB2706  mov      r5, r4
+08EB2708  subs     r5, #1
+08EB270A  lsls     r6, r5, #0xb
+08EB270C  ldr      r0, [pc, #0x18]
+08EB270E  adds     r0, r0, r6
+08EB2710  ldr      r1, [pc, #0x18]
+08EB2712  ldr      r2, [pc, #0x1c]
+08EB2714  bl       #0x8eb23b0
+08EB2718  lsls     r6, r5, #5
+08EB271A  ldr      r0, [pc, #0x18]
+08EB271C  adds     r0, r0, r6
+08EB271E  ldr      r1, [pc, #0x18]
+08EB2720  ldr      r2, [pc, #0x18]
+08EB2722  bl       #0x8eb23b0
+08EB2726  pop      {r4, r5, r6, pc}
+08EB2728  strb     r0, [r0, #0x10]
+08EB272A  lsrs     r3, r5, #3
+08EB272C  str      r0, [r0, r0]
+08EB272E  lsls     r0, r0, #0x18
+08EB2730  lsrs     r0, r0, #0x20
+08EB2732  movs     r0, r0
+08EB2734  strh     r0, [r0, #0x20]
+08EB2736  lsrs     r7, r6, #3
+08EB2738  lsls     r0, r0, #1
+08EB273A  lsls     r0, r0, #0x14
+08EB273C  movs     r0, r4
+08EB273E  movs     r0, r0
+08EB2740  push     {r4, r5, r6, lr}
+08EB2742  str      r0, [r7, #0x50]
+08EB2744  ldr      r1, [r7, #0x28]
+08EB2746  adds     r1, #1
+08EB2748  str      r1, [r7, #0x28]
+08EB274A  movs     r2, #7
+08EB274C  ands     r1, r2
+08EB274E  cmp      r1, #0
+08EB2750  bne      #0x8eb2766
+08EB2752  ldr      r1, [r7, #0x28]
+08EB2754  ldr      r2, [pc, #0x110]
+08EB2756  cmp      r1, r2
+08EB2758  ble      #0x8eb2766
+08EB275A  ldr      r1, [r7, #0x24]
+08EB275C  ldr      r2, [pc, #0x10c]
+08EB275E  ands     r1, r2
+08EB2760  ldr      r0, [r7, #0x50]
+08EB2762  orrs     r0, r1
+08EB2764  str      r0, [r7, #0x50]
+08EB2766  ldr      r0, [r7, #0x50]
+08EB2768  ldr      r1, [r7, #0x20]
+08EB276A  cmp      r1, #0
+08EB276C  bne      #0x8eb2810
+08EB276E  movs     r2, #1
+08EB2770  ands     r2, r0
+08EB2772  cmp      r2, #0
+08EB2774  beq      #0x8eb277c
+08EB2776  bl       #0x8eb24d0
+08EB277A  b        #0x8eb2864
+08EB277C  movs     r2, #2
+08EB277E  ands     r2, r0
+08EB2780  cmp      r2, #0
+08EB2782  beq      #0x8eb278a
+08EB2784  ldr      r0, [pc, #0xe8]
+08EB2786  str      r0, [r7, #0x48]
+08EB2788  b        #0x8eb2864
+08EB278A  movs     r2, #8
+08EB278C  ands     r2, r0
+08EB278E  cmp      r2, #0
+08EB2790  beq      #0x8eb2798
+08EB2792  bl       #0x8eb24ec
+08EB2796  b        #0x8eb2864
+08EB2798  movs     r2, #4
+08EB279A  ands     r2, r0
+08EB279C  cmp      r2, #0
+08EB279E  beq      #0x8eb27ae
+08EB27A0  ldr      r1, [r7, #0x20]
+08EB27A2  movs     r2, #1
+08EB27A4  eors     r1, r2
+08EB27A6  str      r1, [r7, #0x20]
+08EB27A8  ldr      r0, [pc, #0xc8]
+08EB27AA  str      r0, [r7, #0x34]
+08EB27AC  b        #0x8eb2864
+08EB27AE  ldr      r2, [pc, #0xc8]
+08EB27B0  ands     r2, r0
+08EB27B2  cmp      r2, #0
+08EB27B4  beq      #0x8eb27be
+08EB27B6  ldr      r0, [pc, #0xc4]
+08EB27B8  bl       #0x8eb24a8
+08EB27BC  b        #0x8eb2864
+08EB27BE  ldr      r2, [pc, #0xc0]
+08EB27C0  ands     r2, r0
+08EB27C2  cmp      r2, #0
+08EB27C4  beq      #0x8eb27ce
+08EB27C6  ldr      r0, [pc, #0xbc]
+08EB27C8  bl       #0x8eb24a8
+08EB27CC  b        #0x8eb2864
+08EB27CE  movs     r2, #0x40
+08EB27D0  ands     r2, r0
+08EB27D2  cmp      r2, #0
+08EB27D4  beq      #0x8eb27de
+08EB27D6  ldr      r0, [pc, #0xb0]
+08EB27D8  bl       #0x8eb24a8
+08EB27DC  b        #0x8eb2864
+08EB27DE  movs     r2, #0x80
+08EB27E0  ands     r2, r0
+08EB27E2  cmp      r2, #0
+08EB27E4  beq      #0x8eb27ee
+08EB27E6  ldr      r0, [pc, #0x8c]
+08EB27E8  bl       #0x8eb24a8
+08EB27EC  b        #0x8eb2864
+08EB27EE  movs     r2, #0x20
+08EB27F0  ands     r2, r0
+08EB27F2  cmp      r2, #0
+08EB27F4  beq      #0x8eb27fe
+08EB27F6  ldr      r0, [pc, #0x94]
+08EB27F8  bl       #0x8eb24a8
+08EB27FC  b        #0x8eb2864
+08EB27FE  movs     r2, #0x10
+08EB2800  ands     r2, r0
+08EB2802  cmp      r2, #0
+08EB2804  beq      #0x8eb280e
+08EB2806  ldr      r0, [pc, #0x88]
+08EB2808  bl       #0x8eb24a8
+08EB280C  b        #0x8eb2864
+08EB280E  b        #0x8eb2864
+08EB2810  movs     r2, #1
+08EB2812  ands     r2, r0
+08EB2814  cmp      r2, #0
+08EB2816  beq      #0x8eb281e
+08EB2818  bl       #0x8eb2568
+08EB281C  b        #0x8eb2864
+08EB281E  movs     r2, #2
+08EB2820  ands     r2, r0
+08EB2822  cmp      r2, #0
+08EB2824  beq      #0x8eb282c
+08EB2826  bl       #0x8eb25cc
+08EB282A  b        #0x8eb2864
+08EB282C  movs     r2, #0x40
+08EB282E  ands     r2, r0
+08EB2830  cmp      r2, #0
+08EB2832  beq      #0x8eb283a
+08EB2834  bl       #0x8eb25f8
+08EB2838  b        #0x8eb2864
+08EB283A  movs     r2, #0x80
+08EB283C  ands     r2, r0
+08EB283E  cmp      r2, #0
+08EB2840  beq      #0x8eb2848
+08EB2842  bl       #0x8eb2614
+08EB2846  b        #0x8eb2864
+08EB2848  movs     r2, #0x20
+08EB284A  ands     r2, r0
+08EB284C  cmp      r2, #0
+08EB284E  beq      #0x8eb2856
+08EB2850  bl       #0x8eb2630
+08EB2854  b        #0x8eb2864
+08EB2856  movs     r2, #0x10
+08EB2858  ands     r2, r0
+08EB285A  cmp      r2, #0
+08EB285C  beq      #0x8eb2864
+08EB285E  bl       #0x8eb264c
+08EB2862  b        #0x8eb2864
+08EB2864  pop      {r4, r5, r6, pc}
+08EB2866  movs     r0, r0
+08EB2868  movs     r4, r2
+08EB286A  movs     r0, r0
+08EB286C  lsls     r0, r6, #0xf
+08EB286E  movs     r0, r0
+08EB2870  movs     r2, r0
+08EB2872  movs     r0, r0
+08EB2874  movs     r1, r0
+08EB2876  movs     r0, r0
+08EB2878  lsls     r0, r0, #4
+08EB287A  movs     r0, r0
+08EB287C  movs     r2, r6
+08EB287E  movs     r0, r0
+08EB2880  lsls     r0, r0, #8
+08EB2882  movs     r0, r0
+08EB2890  movs     r7, r0
+08EB2892  movs     r0, r0
+08EB2894  push     {r4, r5, r6, lr}
+08EB2896  ldr      r0, [pc, #0x1a4]
+08EB2898  movs     r1, #0
+08EB289A  ldr      r2, [pc, #0x1a4]
+08EB289C  strh     r1, [r0]
+08EB289E  adds     r0, #2
+08EB28A0  subs     r2, #1
+08EB28A2  bne      #0x8eb289c
+08EB28A4  ldr      r0, [pc, #0x19c]
+08EB28A6  movs     r1, #0
+08EB28A8  movs     r2, #5
+08EB28AA  movs     r3, #3
+08EB28AC  bl       #0x8eb2680
+08EB28B0  movs     r4, #0
+08EB28B2  ldr      r0, [r7, #0x18]
+08EB28B4  adds     r0, r0, r4
+08EB28B6  ldr      r1, [r7, #0x40]
+08EB28B8  cmp      r0, r1
+08EB28BA  bge      #0x8eb291a
+08EB28BC  add      r1, sp, #0xc0
+08EB28BE  lsls     r2, r0, #1
+08EB28C0  adds     r1, r1, r2
+08EB28C2  ldrh     r5, [r1]
+08EB28C4  mov      r6, r5
+08EB28C6  ldr      r1, [r7, #0x14]
+08EB28C8  cmp      r0, r1
+08EB28CA  bne      #0x8eb28de
+08EB28CC  movs     r0, #0x47
+08EB28CE  movs     r1, #1
+08EB28D0  adds     r1, r1, r4
+08EB28D2  movs     r2, #0
+08EB28D4  movs     r3, #1
+08EB28D6  bl       #0x8eb2668
+08EB28DA  movs     r3, #1
+08EB28DC  b        #0x8eb28e0
+08EB28DE  movs     r3, #0
+08EB28E0  movs     r0, #0x45
+08EB28E2  movs     r1, #1
+08EB28E4  adds     r1, r1, r4
+08EB28E6  movs     r2, #1
+08EB28E8  bl       #0x8eb2668
+08EB28EC  mov      r0, r6
+08EB28EE  movs     r1, #1
+08EB28F0  adds     r1, r1, r4
+08EB28F2  movs     r2, #2
+08EB28F4  bl       #0x8eb26a4
+08EB28F8  movs     r0, #0x4d
+08EB28FA  movs     r1, #1
+08EB28FC  adds     r1, r1, r4
+08EB28FE  movs     r2, #5
+08EB2900  bl       #0x8eb2668
+08EB2904  ldr      r0, [pc, #0x140]
+08EB2906  subs     r6, #1
+08EB2908  lsls     r6, r6, #5
+08EB290A  adds     r0, r0, r6
+08EB290C  movs     r1, #1
+08EB290E  adds     r1, r1, r4
+08EB2910  movs     r2, #6
+08EB2912  bl       #0x8eb2680
+08EB2916  adds     r4, #1
+08EB2918  b        #0x8eb28b2
+08EB291A  ldr      r0, [r7, #0x14]
+08EB291C  adds     r0, #1
+08EB291E  movs     r1, #8
+08EB2920  movs     r2, #1
+08EB2922  movs     r3, #0
+08EB2924  bl       #0x8eb26a4
+08EB2928  movs     r0, #0x46
+08EB292A  movs     r1, #8
+08EB292C  movs     r2, #4
+08EB292E  movs     r3, #0
+08EB2930  bl       #0x8eb2668
+08EB2934  ldr      r0, [r7, #0x40]
+08EB2936  movs     r1, #8
+08EB2938  movs     r2, #5
+08EB293A  movs     r3, #0
+08EB293C  bl       #0x8eb26a4
+08EB2940  movs     r4, #0
+08EB2942  cmp      r4, #8
+08EB2944  bge      #0x8eb296a
+08EB2946  movs     r5, #0
+08EB2948  cmp      r5, #8
+08EB294A  bge      #0x8eb2966
+08EB294C  lsls     r6, r4, #3
+08EB294E  adds     r6, r6, r5
+08EB2950  adds     r6, #0x80
+08EB2952  mov      r0, r6
+08EB2954  movs     r1, #1
+08EB2956  adds     r1, r1, r4
+08EB2958  movs     r2, #0x16
+08EB295A  adds     r2, r2, r5
+08EB295C  movs     r3, #2
+08EB295E  bl       #0x8eb2668
+08EB2962  adds     r5, #1
+08EB2964  b        #0x8eb2948
+08EB2966  adds     r4, #1
+08EB2968  b        #0x8eb2942
+08EB296A  ldr      r0, [r7, #0x14]
+08EB296C  ldr      r1, [r7, #0x18]
+08EB296E  adds     r0, r0, r1
+08EB2970  ldr      r1, [r7, #0x40]
+08EB2972  cmp      r0, r1
+08EB2974  bge      #0x8eb298a
+08EB2976  add      r1, sp, #0xc0
+08EB2978  lsls     r2, r0, #1
+08EB297A  adds     r1, r1, r2
+08EB297C  ldrh     r4, [r1]
+08EB297E  ldr      r0, [r7, #0x44]
+08EB2980  cmp      r0, r4
+08EB2982  beq      #0x8eb298a
+08EB2984  str      r4, [r7, #0x44]
+08EB2986  bl       #0x8eb2704
+08EB298A  ldr      r0, [pc, #0xc0]
+08EB298C  movs     r1, #9
+08EB298E  movs     r2, #1
+08EB2990  movs     r3, #0
+08EB2992  bl       #0x8eb2680
+08EB2996  movs     r4, #0
+08EB2998  ldr      r5, [r7, #0x10]
+08EB299A  cmp      r4, r5
+08EB299C  bge      #0x8eb29b6
+08EB299E  mov      r0, r7
+08EB29A0  adds     r0, r0, r4
+08EB29A2  ldrb     r5, [r0]
+08EB29A4  mov      r0, r5
+08EB29A6  movs     r1, #9
+08EB29A8  movs     r2, #0xc
+08EB29AA  adds     r2, r2, r4
+08EB29AC  movs     r3, #0
+08EB29AE  bl       #0x8eb2668
+08EB29B2  adds     r4, #1
+08EB29B4  b        #0x8eb2998
+08EB29B6  movs     r0, #0x4a
+08EB29B8  movs     r1, #9
+08EB29BA  movs     r2, #0xc
+08EB29BC  ldr      r3, [r7, #0x10]
+08EB29BE  adds     r2, r2, r3
+08EB29C0  movs     r3, #1
+08EB29C2  bl       #0x8eb2668
+08EB29C6  movs     r4, #0
+08EB29C8  cmp      r4, #6
+08EB29CA  bge      #0x8eb2a18
+08EB29CC  movs     r5, #0
+08EB29CE  cmp      r5, #7
+08EB29D0  bge      #0x8eb2a14
+08EB29D2  lsls     r6, r4, #3
+08EB29D4  subs     r6, r6, r4
+08EB29D6  adds     r6, r6, r5
+08EB29D8  ldr      r0, [pc, #0x74]
+08EB29DA  adds     r0, r0, r6
+08EB29DC  ldrb     r0, [r0]
+08EB29DE  cmp      r0, #0x80
+08EB29E0  blo      #0x8eb29ec
+08EB29E2  cmp      r0, #0xff
+08EB29E4  bne      #0x8eb29ea
+08EB29E6  movs     r0, #0x4b
+08EB29E8  b        #0x8eb29ec
+08EB29EA  movs     r0, #0x4c
+08EB29EC  ldr      r1, [r7, #0x20]
+08EB29EE  cmp      r1, #0
+08EB29F0  beq      #0x8eb2a02
+08EB29F2  ldr      r1, [r7, #0x38]
+08EB29F4  cmp      r1, r5
+08EB29F6  bne      #0x8eb2a02
+08EB29F8  ldr      r1, [r7, #0x3c]
+08EB29FA  cmp      r1, r4
+08EB29FC  bne      #0x8eb2a02
+08EB29FE  movs     r3, #1
+08EB2A00  b        #0x8eb2a04
+08EB2A02  movs     r3, #0
+08EB2A04  movs     r1, #0xb
+08EB2A06  adds     r1, r1, r4
+08EB2A08  movs     r2, #1
+08EB2A0A  adds     r2, r2, r5
+08EB2A0C  bl       #0x8eb2668
+08EB2A10  adds     r5, #1
+08EB2A12  b        #0x8eb29ce
+08EB2A14  adds     r4, #1
+08EB2A16  b        #0x8eb29c8
+08EB2A18  movs     r4, #0
+08EB2A1A  cmp      r4, #6
+08EB2A1C  bge      #0x8eb2a38
+08EB2A1E  lsls     r5, r4, #4
+08EB2A20  lsls     r6, r4, #3
+08EB2A22  adds     r5, r5, r6
+08EB2A24  ldr      r0, [pc, #0x2c]
+08EB2A26  adds     r0, r0, r5
+08EB2A28  movs     r1, #0xb
+08EB2A2A  adds     r1, r1, r4
+08EB2A2C  movs     r2, #0xa
+08EB2A2E  movs     r3, #0
+08EB2A30  bl       #0x8eb2680
+08EB2A34  adds     r4, #1
+08EB2A36  b        #0x8eb2a1a
+08EB2A38  pop      {r4, r5, r6, pc}
+08EB2A3A  movs     r0, r0
+08EB2A3C  bhi      #0x8eb2a40
+08EB2A3E  lsls     r0, r0, #0x18
+08EB2A40  lsls     r0, r0, #0xa
+08EB2A42  movs     r0, r0
+08EB2A46  lsrs     r7, r6, #3
+08EB2A48  subs     r2, #0
+08EB2A4A  lsrs     r3, r5, #3
+08EB2A4E  lsrs     r7, r6, #3
+08EB2A50  push     {lr}
+08EB2A52  lsrs     r7, r6, #3
+08EB2A56  lsrs     r7, r6, #3
