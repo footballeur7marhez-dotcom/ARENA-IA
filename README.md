@@ -77,7 +77,7 @@ Deux fichiers livrés :
 | Fichier | Taille | Usage |
 |---|---|---|
 | `pokemon-firered-starter-chooser.gba` | 16 Mo | ROM déjà patchée : à charger directement |
-| `pokemon-firered-starter-chooser.bps` | 402 634 o | patch à appliquer sur votre dump |
+| `pokemon-firered-starter-chooser.bps` | 402 627 o | patch à appliquer sur votre dump |
 
 ### Option 1 — RetroArch (le plus simple)
 
@@ -100,10 +100,11 @@ pokemon-firered-starter-chooser.bps votrerom.gba sortie.gba`), **Rom Patcher JS*
 | Touche | Action |
 |---|---|
 | A | Valider le Pokémon affiché |
-| B | Annuler |
+| B | Annuler (revient au choix normal) |
 | START | **Aléatoire** parmi les 386 |
-| Haut / Bas | Monter / descendre dans la liste |
-| L / R | Page précédente / suivante |
+| Haut / Bas | Monter / descendre dans la liste (maintien = défilement rapide) |
+| L / R | Page précédente / suivante (7 Pokémon) |
+| Gauche | Effacer un caractère de la recherche |
 | SELECT | Activer le clavier à l'écran |
 | Clavier : A | taper la lettre survolée |
 | Clavier : B / SELECT | quitter le clavier |

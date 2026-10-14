@@ -125,7 +125,7 @@ def enc_str(s):
 
 
 HELP_LINES = ['A: VALIDER', 'B: ANNULER', 'START: ALEATOIRE',
-              'L / R: HAUT / BAS', 'SELECT: CLAVIER', 'GAUCHE: EFFACER']
+              'HAUT/BAS: DEFILER', 'L / R: PAGE', 'SELECT: CLAVIER']
 HELP_W = 24                      # octets par ligne dans la ROM
 
 
