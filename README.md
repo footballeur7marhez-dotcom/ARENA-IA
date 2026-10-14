@@ -67,3 +67,58 @@ Pour transposer cette spec sur une vraie ROM :
 ---
 
 *Projet pédagogique / démonstratif. Pokémon © Nintendo / Creatures Inc. / GAME FREAK inc.*
+
+---
+
+## ROM hack Pokémon FireRed (romshack)
+
+Deux fichiers livrés :
+
+| Fichier | Taille | Usage |
+|---|---|---|
+| `pokemon-firered-starter-chooser.gba` | 16 Mo | ROM déjà patchée : à charger directement |
+| `pokemon-firered-starter-chooser.bps` | 402 634 o | patch à appliquer sur votre dump |
+
+### Option 1 — RetroArch (le plus simple)
+
+1. RetroArch → *Menu principal → Charger un core* → **mGBA**.
+2. *Menu principal → Charger un contenu* → `pokemon-firered-starter-chooser.gba`.
+3. En jeu : au moment où le Professeur propose les 3 starters, l'écran de
+   sélection remplace ce choix.
+
+### Option 2 — patcher votre propre dump
+
+Le patch attend une ROM source dont le **CRC32 = `5DC668F6`**
+(Pokémon FireRed US v1.0, 16 Mo). Outils : **flips** (`flips --apply
+pokemon-firered-starter-chooser.bps votrerom.gba sortie.gba`), **Rom Patcher JS**
+(romhacking.net/utilities/598/) ou `/tmp/venv/bin/python romhack/bps.py`.
+
+> Si votre dump a un autre CRC32, utilisez directement le `.gba` fourni.
+
+### Commandes en jeu
+
+| Touche | Action |
+|---|---|
+| A | Valider le Pokémon affiché |
+| B | Annuler |
+| START | **Aléatoire** parmi les 386 |
+| Haut / Bas | Monter / descendre dans la liste |
+| L / R | Page précédente / suivante |
+| SELECT | Activer le clavier à l'écran |
+| Clavier : A | taper la lettre survolée |
+| Clavier : B / SELECT | quitter le clavier |
+| Clavier : dernière case | effacer / tout effacer |
+
+La liste contient **les 386 Pokémon** (Kanto, Johto, Hoenn), **légendaires
+inclus** (signalés par `*`), avec une **barre de recherche** instantanée. Le
+starter choisi est donné par le jeu et **conservé pour toute la partie**.
+
+### Reconstruire la ROM depuis les sources
+
+```bash
+/tmp/venv/bin/python romhack/build.py          # données + code + hook + auto-tests + BPS
+/tmp/venv/bin/python romhack/test_chooser.py   # exécution dans le mini-émulateur
+```
+
+Sources : `romhack/tasm.py` (assembleur Thumb-1), `romhack/assets.py` (données),
+`romhack/codegen.py` (code ARM), `romhack/bps.py` (patch), `romhack/build.py`.
