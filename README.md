@@ -76,8 +76,8 @@ Deux fichiers livrés :
 
 | Fichier | Taille | Usage |
 |---|---|---|
-| `pokemon-firered-starter-chooser.gba` | 16 Mo | ROM déjà patchée : à charger directement |
-| `pokemon-firered-starter-chooser.bps` | 402 627 o | patch à appliquer sur votre dump |
+| `pokemon-firered-starter-chooser.gba` | 16 Mo (CRC32 `ADE77A8A`) | ROM déjà patchée : à charger directement |
+| `pokemon-firered-starter-chooser.bps` | 402 632 o | patch à appliquer sur votre dump |
 
 ### Option 1 — RetroArch (le plus simple)
 
