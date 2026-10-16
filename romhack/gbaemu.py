@@ -31,7 +31,11 @@ class Emu:
         self.keys = 0x03FF
         # VBlank toujours actif
         self.mem[IO][4] |= 1
+        # KEYINPUT actif-bas : 0x3FF = aucune touche enfoncee
+        self.mem[IO][0x130] = 0xFF
+        self.mem[IO][0x131] = 0x03
         self.hooks = {}
+        self.schedule = []
 
     # ------------------------------------------------------------- memoire
     def _region(self, addr):
@@ -313,6 +317,10 @@ class Emu:
                 self.mem[IO][0x130] = self.keys & 0xFF
                 self.mem[IO][0x131] = (self.keys >> 8) & 0xFF
                 keys_after = None
+            while self.schedule and steps >= self.schedule[0][0]:
+                _, m = self.schedule.pop(0)
+                self.mem[IO][0x130] = m & 0xFF
+                self.mem[IO][0x131] = (m >> 8) & 0xFF
             pc = self.r[15]
             self.r[15] = self.step(pc)
             # simulation immediate des DMA

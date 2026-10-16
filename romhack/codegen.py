@@ -96,12 +96,16 @@ def gen(data):
     a.label('hook')
     a.push([4, 5, 6, 14])
     a.i('movhi', 4, 0)                       # r4 = ctx
-    a.i('ldr', 0, 4, 8)                      # r0 = ctx->ptr
-    a.i('ldrh', 0, 0, 0)                     # r0 = 1er demi-mot du script
+    a.i('ldr', 0, 4, 8)                      # r0 = pointeur de script
+    a.i('ldrb', 1, 0, 0)                     # r1 = octet faible
+    a.i('ldrb', 0, 0, 1)                     # r0 = octet fort
+    a.i('lsls', 0, 0, 8)                     # r0 = octet fort << 8
+    a.i('adds', 0, 0, 1)                     # r0 = demi-mot (lecture sur octets)
     a.lit(1, VAR_TEMP_2)
     a.i('cmp', 0, 1)
     a.bc('ne', 'skip')
     a.bl('chooser')                          # r0 = espece (0 = annule)
+    a.addframe(4)                            # depile le slot de retour du bl
     a.i('cmpi', 0, 0)
     a.bc('eq', 'skip')
     a.i('movhi', 5, 0)
@@ -110,8 +114,8 @@ def gen(data):
     a.i('strh', 5, 0, 0)
     a.label('skip')
     a.i('movhi', 0, 4)                       # r0 = ctx
-    a.pop([4, 5, 6])
-    a.addframe(4)                            # jette lr (on chaine par bx)
+    a.pop([4, 5, 6])                         # depile les registres sauvegardes
+    a.addframe(8)                            # depile lr + l'adresse de retour du bl
     a.push([5, 6])                           # deplace : push {r5, r6}
     a.subspace(8)                            # deplace : sub sp, #8
     a.i('adds3', 4, 0, 0)                    # deplace : adds r4, r0, #0

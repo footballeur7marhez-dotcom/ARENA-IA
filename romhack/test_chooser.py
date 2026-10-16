@@ -12,7 +12,7 @@ CTX = 0x0203F000
 CTX_PTR = 0x0203F010
 SP = 0x03007F00
 LR = 0x0806BFFF                     # retour du hook
-SCR_AFTER_BL = 0x08EB2212           # instruction suivant `bl chooser`
+SCR_AFTER_BL = 0x08EB221A           # instruction suivant `bl chooser` (+ add sp,#4)
 
 K_A, K_B, K_SEL, K_ST = 0x01, 0x02, 0x04, 0x08
 K_RT, K_LF, K_UP, K_DN = 0x10, 0x20, 0x40, 0x80
@@ -42,12 +42,14 @@ def setup(emu):
     emu.r[14] = LR
 
 
-def run_scenario(name, keys, frames, press_at=200, expect=None):
+def run_scenario(name, keys, frames, press_at=200, expect=None, sched=None):
     data, a, code, labels = build()
     rom = open(ROM, 'rb').read()
     emu = Emu(rom)
     setup(emu)
     emu.keys = keys
+    if sched:
+        emu.schedule = list(sched)
     status, steps = emu.run(HOOK, max_steps=3000000, until=SCR_AFTER_BL,
                             keys_after=press_at)
     ok = status == 'ok'
@@ -88,21 +90,23 @@ if __name__ == '__main__':
     which = sys.argv[1] if len(sys.argv) > 1 else 'all'
     fails = 0
     if which in ('all', 'a'):
-        s, emu = run_scenario('A immediat (1er de la liste)', K_A, 1, expect=1)
+        s, emu = run_scenario('A immediat (1er de la liste)', 0x3FF & ~K_A, 1, expect=1)
         if s is None:
             fails += 1
         else:
             show(emu)
     if which in ('all', 'down'):
-        s, emu = run_scenario('BAS puis A', K_DN | K_A, 1, expect=2)
+        s, emu = run_scenario('BAS puis A', 0x3FF, 1, expect=2,
+                              sched=[(200, 0x3FF & ~K_DN), (9000, 0x3FF), (9200, 0x3FF & ~K_A)])
         if s is None:
             fails += 1
     if which in ('all', 'up'):
-        s, emu = run_scenario('HAUT puis A (boucle)', K_UP | K_A, 1, expect=386)
+        s, emu = run_scenario('HAUT puis A (boucle)', 0x3FF, 1, expect=386,
+                              sched=[(200, 0x3FF & ~K_UP), (9000, 0x3FF), (9200, 0x3FF & ~K_A)])
         if s is None:
             fails += 1
     if which in ('all', 'start'):
-        s, emu = run_scenario('START (aleatoire)', K_ST, 1)
+        s, emu = run_scenario('START (aleatoire)', 0x3FF & ~K_ST, 1)
         if s is None or not (1 <= s <= 386):
             print('   ECHEC : espece aleatoire hors limites')
             fails += 1
